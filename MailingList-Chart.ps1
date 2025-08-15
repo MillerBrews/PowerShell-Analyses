@@ -66,5 +66,4 @@ $Form.Text = "PowerShell Chart for MailingList Data"
 $Form.Width = 1.05*($Chart.Width)
 $Form.Height = 1.15*($Chart.Height)
 $Form.Controls.Add($Chart)
-#$Form.Add_Shown({$Form.Activate()})
-$Form.ShowDialog() | Out-Null
+$Form.ShowDialog() | Out-Null  # Display the Form with Chart visualization
