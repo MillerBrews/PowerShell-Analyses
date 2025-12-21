@@ -1,7 +1,7 @@
-<#
+﻿<#
 Data Analysis: CrossTab.ps1
 Author: Eric K. Miller
-Last updated: 18 December 2025
+Last updated: 20 December 2025
 
 This script contains PowerShell code for creating a cross-tabulation
 (crosstab), or contingency table, returned as an object. It helps
@@ -13,7 +13,7 @@ function New-CrossTab {
     [Alias('crosstab')]
     param(
         [Parameter(Mandatory, ValueFromPipeline)]
-        [object[]]$Data,
+        [PSCustomObject[]]$DataObject,
 
         [Parameter(Mandatory)]
         [string]$RowEntries,
@@ -24,7 +24,7 @@ function New-CrossTab {
 
     begin {$allData = @()}
 
-    process {$allData += $Data}
+    process {$allData += $DataObject}
 
     end {
         if ($allData[0].PSObject.Properties.Name -notcontains $RowEntries) {
